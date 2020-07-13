@@ -49,14 +49,12 @@ export class ApiService {
       { farm_id: 3, farm_name_en: 'Hong Kong Domestic Pig', farm_name_cn: '香港家豬' },
       { farm_id: 4, farm_name_en: 'Huaji Farm', farm_name_cn: '華記農場' },
       { farm_id: 5, farm_name_en: 'Yuen Long Eternal Life Farm', farm_name_cn: '元朗永生農場' },
-      { farm_id: 6, farm_name_en: 'Yuen Long Yingming Farm', farm_name_cn: '元朗英明農場' },
+      { farm_id: 6, farm_name_en: 'Yuen Long Yingming Farm 1', farm_name_cn: '元朗英明農場 1' },
       { farm_id: 7, farm_name_en: 'Yuen Long Yingming Farm 2', farm_name_cn: '元朗英明農場 2' },
       { farm_id: 8, farm_name_en: 'Yuen Long Yingming Farm 3', farm_name_cn: '元朗英明農場 3' },
       { farm_id: 9, farm_name_en: 'Yuen Long Yingming Farm 4', farm_name_cn: '元朗英明農場 4' },
       { farm_id: 10, farm_name_en: 'Yuen Long Yingming Farm 5', farm_name_cn: '元朗英明農場 5' },
       { farm_id: 11, farm_name_en: 'Yuen Long Yingming Farm 6', farm_name_cn: '元朗英明農場 6' },
-      { farm_id: 12, farm_name_en: 'Yuen Long Yingming Farm 7', farm_name_cn: '元朗英明農場 7' },
-      { farm_id: 13, farm_name_en: 'Yuen Long Yingming Farm 8', farm_name_cn: '元朗英明農場 8' },
     ];
 
     return this.farmList;
@@ -73,7 +71,9 @@ export class ApiService {
       new PigInfo(7, "Hexing Farm 2", "合興農場 2", new Date('2020-06-01T15:11:10')),
       new PigInfo(8, "Hexing Farm 3", "合興農場 3", new Date('2020-06-01T14:11:10')),
       new PigInfo(9, "Hexing Farm 4", "合興農場 4", new Date('2020-06-01T11:11:10')),
-      new PigInfo(10, "Hexing Farm 5", "合興農場 5", new Date('2020-06-01T10:11:10')),
+      new PigInfo(10, "Hexing Farm 4", "合興農場 5", new Date('2020-06-01T11:11:10')),
+      new PigInfo(11, "Hexing Farm 4", "合興農場 6", new Date('2020-06-01T11:11:10')),
+      new PigInfo(12, "Hexing Farm 4", "合興農場 7", new Date('2020-06-01T11:11:10')),
     ];
     
     this.pigBarnList = [

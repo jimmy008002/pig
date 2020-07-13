@@ -30,22 +30,24 @@ export class FarmManagementComponent implements OnInit {
     this.farmListDisplay = this.farmList;
   }
 
-  searchFilter(filterValue: string) {
+  farmSearchFilter(filterValue: string) {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLocaleLowerCase();
-
-    let filterResult = this.farmList.filter(item => 
-      Object.keys(item).some(k => item[k] != null && 
-      item[k].toString().toLowerCase()
-      .includes(filterValue.toLowerCase())));
     
-    if (filterValue.length == 0) {
-      this.farmListDisplay = this.farmList
-      // console.log(this.farmList);
-    } else {
+    let filterResult;
+    if(filterValue === '' ) {
+        this.farmListDisplay = this.farmList;
+    } 
+    else {
+      filterResult = this.farmList.filter((item) => {
+        if (item.farm_name_en.toString().toLocaleLowerCase().includes(filterValue) 
+            || item.farm_name_cn.toString().toLocaleLowerCase().includes(filterValue)) {
+          return item;
+        }
+      });
       this.farmListDisplay = filterResult;
-      // console.log(filterResult);
     }
+    
     this.config.currentPage = 1;
     // console.log(this.farmListDisplay);
   }
