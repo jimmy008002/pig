@@ -1,0 +1,64 @@
+<div>
+    <div class="ar-tag-main">
+        <div class="ar-tag-title"> 激活Ar標籤 </div>
+
+        <div class="ar-tag-table-title"> 當前代碼 </div>
+        <table class="ar-tag-table">
+            <tbody>
+                <td style="padding-left: 20px;">
+                    <ul>
+                        <li style="margin-bottom: 8px;"> {{ currentFarm.farm_name_cn }} </li>
+                        <li> {{ currentFarm.farm_name_en }} </li>
+                    </ul>
+                </td>
+                <td style="text-align: right; padding-right: 20px;">
+                    <ul>
+                        <li style="margin-bottom: 8px;"> {{ currentDateTime | date: 'dd-MM-yyyy' }} </li>
+                        <li style="font-weight: bold;"> {{ currentDateTime | date: 'hh:mm a' }} </li>
+                    </ul>
+                </td>
+            </tbody>
+        </table>
+
+        <div class="ar-tag-table-title" style="margin-top: 30px;"> 所有農場 </div>
+        <div class="ar-tag-search">
+            <input class="ar-tag-search-input" (keyup)="searchFilter($event.target.value)" placeholder="Please enter farm name">
+        </div>
+        <table class="ar-tag-table">
+            <tbody>
+                <tr>
+                    <pagination-controls 
+                    (pageChange)="pageChange($event)" 
+                              maxSize="7"
+                              directionLinks="true"
+                              responsive="true"
+                              previousLabel="Previous"
+                              nextLabel="Next">
+                    </pagination-controls>
+                </tr>
+                <tr class="ar-tag-table-row" *ngFor="let farm of farmListDisplay | paginate: config">
+                    <td style="padding-left: 20px;">
+                        <ul>
+                            <li style="margin-bottom: 8px;"> {{ farm.farm_name_cn }} </li>
+                            <li> {{ farm.farm_name_en }} </li>
+                        </ul>
+                    </td>
+                    <td style="text-align: right; padding-right: 20px;">
+                        <button class="ar-tag-activate-button" (click)="activateFarmTag(farm)">啟用</button>
+                    </td>
+                </tr>
+                <tr>
+                    <pagination-controls 
+                    (pageChange)="pageChange($event)" 
+                              maxSize="7"
+                              directionLinks="true"
+                              responsive="true"
+                              previousLabel="Previous"
+                              nextLabel="Next">
+                    </pagination-controls>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,38 @@
+.top-side-menu {
+    height: 44px;
+    width: 100vw;
+    background-color: #12234e;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+
+.top-center-logo {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 28px;
+    margin-left: calc(50vw - 56px);
+}
+
+.no-permission-container{
+    height:100vh;
+}
+
+title {
+    display: inline;
+}
+
+footer {
+    position: relative;
+    bottom: 5px;
+    font-size: 12px;
+}
+
+.no-permission-container{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height : 90vh;
+}

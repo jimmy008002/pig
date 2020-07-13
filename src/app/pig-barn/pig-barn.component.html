@@ -1,0 +1,35 @@
+<!-- <app-breadcrumb></app-breadcrumb> -->
+<div class="pig-barn-title">Pig Barn</div>
+<hr>
+
+<h3 style="margin-top: 30px;">All Pig Barns</h3>
+
+<table class="pig-barn-table">
+    <tbody>
+        <tr>
+            <td colspan="2"><pagination-controls
+                (pageChange)="pageChange($event)"
+                          maxSize="7"
+                          directionLinks="true"
+                          responsive="true"
+                          previousLabel="Previous"
+                          nextLabel="Next"></pagination-controls></td>
+        </tr>
+        <tr class="pig-barn-table-row" *ngFor="let pigBarn of pigBarnListDisplay | paginate: config">
+            <td class="pig-barn-table-left-col"> {{ pigBarn.pig_barn_name }} </td>
+            <td class="pig-barn-table-right-col"> <a [routerLink]="['PigBarnDetail/', pigBarn.pig_barn_id]">Detail</a></td>
+        </tr>
+        <tr>
+            <td colspan="2"><pagination-controls
+                (pageChange)="pageChange($event)" 
+                          maxSize="7"
+                          directionLinks="true"
+                          responsive="true"
+                          previousLabel="Previous"
+                          nextLabel="Next"></pagination-controls></td>
+        </tr>
+    </tbody>
+</table>     
+
+
+<router-outlet name=""></router-outlet>

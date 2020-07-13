@@ -1,0 +1,80 @@
+.back-icon {
+    color: #007bff;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.right-icon {
+    color: gray;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.pig-barn-breadcrumb {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.pig-number {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.pig-barn-detail-table {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: #464545;
+    background-color: white;
+    border-top-style: solid;
+    border-width: 0.5px 0 0.5px 0;
+    border-top-color: rgba(128, 128, 128, 0.25);
+    border-bottom-style: solid;
+    border-bottom-color: rgba(128, 128, 128, 0.25);
+}
+
+.pig-barn-detail-table-row {
+    border-top-style: solid;
+    border-width: 0.5px 0 0.5px 0;
+    border-top-color: rgba(128, 128, 128, 0.25);
+    border-bottom-style: solid;
+    border-bottom-color: rgba(128, 128, 128, 0.25);
+}
+
+.sort-button {
+    border-width: 0; 
+    background-color: #ffffff; 
+    padding: 0;
+}
+
+.pig-barn-detail-table-left-col {
+    height: 50px;
+    padding-left: 20px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.pig-barn-detail-table-right-col {
+    height: 50px;
+    padding-right: 20px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.pig-barn-detail-table-left-col ul {
+    list-style: none;
+}
+
+.pig-barn-detail-table-right-col ul {
+    list-style-type: none;
+}

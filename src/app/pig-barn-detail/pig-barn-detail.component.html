@@ -1,0 +1,66 @@
+<!-- <app-breadcrumb></app-breadcrumb> -->
+<div>
+    <fa-icon class="back-icon" [icon]="leftIcon"></fa-icon>
+    <a routerLink="/Dashboard/PigBarn">Back</a>
+</div>
+
+<div class="pig-barn-breadcrumb">
+    <a routerLink="/Dashboard/PigBarn" style="color: black;"> Pig Barn </a> <fa-icon class="right-icon" [icon]="rightIcon"></fa-icon> 
+    {{ pigBarnName }}
+</div>
+
+<hr>
+<div class="pig-number">Number of pig in current: {{ pigNumber }} </div>
+
+<table class="pig-barn-detail-table">
+    <tbody>
+        <tr>
+            <td colspan="2"><pagination-controls
+                (pageChange)="pageChange($event)"
+                          maxSize="7"
+                          directionLinks="true"
+                          responsive="true"
+                          previousLabel="Previous"
+                          nextLabel="Next"></pagination-controls></td>
+        </tr>
+        <tr class="pig-barn-detail-table-row">
+            <td class="pig-barn-detail-table-left-col">
+                Name of farm
+                <span>
+                    <button class="sort-button" (click)="ascendingSortByName()">↑</button>
+                    <button class="sort-button" (click)="descendingSortByName()">↓</button>
+                </span>
+            </td>
+            <td class="pig-barn-detail-table-right-col">
+                Time
+                <span>
+                    <button class="sort-button" (click)="ascendingSortByTime()">↑</button>
+                    <button class="sort-button" (click)="descendingSortByTime()">↓</button>
+                </span>
+            </td>
+        </tr>
+        <tr class="pig-barn-detail-table-row" *ngFor="let pig of pigInfoList | paginate: config">
+            <td class="pig-barn-detail-table-left-col">
+                <ul>
+                    <li style="margin-bottom: 8px;"> {{ pig.farm_name_en }} </li>
+                    <li> {{ pig.farm_name_cn }} </li>
+                </ul>
+            </td>
+            <td class="pig-barn-detail-table-right-col">
+                <ul>
+                    <li style="margin-bottom: 8px;"> {{ pig.date_time | date: 'dd-MM-yyyy' }} </li>
+                    <li style="font-weight: bold;"> {{ pig.date_time | date: 'hh:mm a' }} </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><pagination-controls
+                (pageChange)="pageChange($event)"
+                          maxSize="7"
+                          directionLinks="true"
+                          responsive="true"
+                          previousLabel="Previous"
+                          nextLabel="Next"></pagination-controls></td>
+        </tr>
+    </tbody>
+</table>

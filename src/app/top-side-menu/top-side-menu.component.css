@@ -1,0 +1,41 @@
+.top-side-menu {
+    height: 44px;
+    width: 100vw;
+    background-color: #12234e;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.logout-button:hover {
+    color:#0089FA;
+}
+
+.logout-button {
+    height: 42px;
+    width: 80px;
+    color: white;
+    position: fixed;
+    right:0px;
+    line-height: 42px;
+    font-size: 20px;
+    cursor:pointer;
+}
+
+.user-name{
+    height: 42px;
+    width: 100%;
+    color: #6c57c9;
+    position: relative;
+    margin-left:20px;
+    line-height: 42px;
+    font-size: 20px;
+    left:20vw;
+}
+
+.top-center-logo {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 28px;
+    margin-left: calc(50vw - 56px);
+}

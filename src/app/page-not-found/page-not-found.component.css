@@ -1,0 +1,8 @@
+.top-side-menu {
+    height: 44px;
+    width: 100vw;
+    background-color: #12234e;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}

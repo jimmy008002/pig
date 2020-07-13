@@ -1,0 +1,15 @@
+<div class="top">
+    <app-top-side-menu></app-top-side-menu>
+</div>
+<mat-drawer-container class="drawer-container">
+    <mat-drawer class="drawer-sidenav" style="width: 260px;" mode="side" [opened]="'drawerStatus'">
+        <a class="dashboard-link" *ngFor="let link of linklists;let i = index" [attr.data-index]="i">
+            <div [className]="link.selected ? 'drawer-element nav-btn-active': 'drawer-element nav-btn-inactive'" (click)="selectTitle(i)">
+                {{ link.name }}</div>
+        </a>
+    </mat-drawer>
+
+    <div class="wrap-main-container">
+        <router-outlet name=""></router-outlet>
+    </div>
+</mat-drawer-container>

@@ -1,0 +1,11 @@
+<ol class="pig-barn-breadcrumb" id="breadcrumb">
+    <li class="breadcrumb-item">
+        <a>Pig Barn</a>
+    </li>
+    <li *ngFor="let breadcrumb of breadcrumbs; let i = index;" class="breadcrumb-item">
+        <a [hidden]="i == (breadcrumbs.length - 1)">{{breadcrumb.name}}</a>
+        <span [hidden]="i != (breadcrumbs.length - 1)">
+            <b>{{breadcrumb.name}}</b>
+        </span>
+    </li>
+</ol>

@@ -1,0 +1,35 @@
+<div class="farm-management-title">Farm Management</div>
+<hr>
+<div class="upload-button-div">
+    <button class="upload-button">Upload CSV</button>
+</div>
+<h3>All Farms</h3>
+
+<div class="farm-management-search">
+    <input class="farm-management-search-input" (keyup)="searchFilter($event.target.value)" placeholder="Please enter farm name">
+</div>
+
+<table class="farm-management-table">
+    <tbody>
+        <tr><pagination-controls 
+            (pageChange)="pageChange($event)" 
+                      maxSize="7"
+                      directionLinks="true"
+                      responsive="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"></pagination-controls></tr>
+            <tr class="farm-management-table-row" *ngFor="let farm of farmListDisplay | paginate: config">
+            <ul>
+                <li style="margin-bottom: 8px;"> {{ farm.farm_name_en }} </li>
+                <li> {{ farm.farm_name_cn }} </li>
+            </ul>
+        </tr>
+        <tr><pagination-controls 
+            (pageChange)="pageChange($event)" 
+                      maxSize="7"
+                      directionLinks="true"
+                      responsive="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"></pagination-controls></tr>
+    </tbody>
+</table>
