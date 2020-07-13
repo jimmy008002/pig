@@ -55,6 +55,12 @@ a {
     border-width: 0; 
     background-color: #ffffff; 
     padding: 0;
+    width: 13px;
+    height: 10px;
+}
+
+.sort-button:hover {
+    cursor: pointer;
 }
 
 .pig-barn-detail-table-left-col {

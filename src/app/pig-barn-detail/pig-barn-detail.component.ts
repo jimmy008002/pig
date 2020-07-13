@@ -19,6 +19,9 @@ export class PigBarnDetailComponent implements OnInit {
 
   leftIcon = faAngleLeft;
   rightIcon = faAngleRight;
+
+  ascendingName: boolean;
+  ascendingTime: boolean;
   
   pigBarnList: PigBarn[];
   pigBarn: PigBarn;
@@ -48,57 +51,96 @@ export class PigBarnDetailComponent implements OnInit {
         }
       });
     });
+
+    this.ascendingName = true;
+    this.ascendingTime = true;
   }
 
   pageChange(event) {
     this.config.currentPage = event;
   }
 
-  sortData(array: Array<number | string>): Array<number | string> {
-    return array.sort((a, b) => a < b ? -1 : 1);
-  }
+  // sortData(array: Array<number | string>): Array<number | string> {
+  //   return array.sort((a, b) => a < b ? -1 : 1);
+  // }
 
-  ascendingSortByName() {
+  sortByName() {
+    this.ascendingName = !this.ascendingName;
     let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
           let x = a.farm_name_en.trim().toLowerCase();
           let y = b.farm_name_en.trim().toLowerCase();
-        return x == y ? 0 : x > y ? 1 : -1;
+          if (this.ascendingName) {
+            return x == y ? 0 : x > y ? 1 : -1;
+          } else {
+            return x == y ? 0 : x < y ? 1 : -1;
+          }
       }
     );
+
     this.pigBarn.pig_info_list = sortedResult;
-    // console.log(sortedResult);
+    // console.log(this.pigBarn.pig_info_list);
+    // console.log(this.ascendingName);
   }
 
-  descendingSortByName() {
+  sortByTime() {
+    this.ascendingTime = !this.ascendingTime;
     let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
           let x = a.farm_name_en.trim().toLowerCase();
           let y = b.farm_name_en.trim().toLowerCase();
-        return x == y ? 0 : x < y ? 1 : -1;
+          if (this.ascendingTime) {
+            return x == y ? 0 : x > y ? 1 : -1;
+          } else {
+            return x == y ? 0 : x < y ? 1 : -1;
+          }
       }
     );
+
     this.pigBarn.pig_info_list = sortedResult;
-    // console.log(sortedResult);
+    // console.log(this.pigBarn.pig_info_list);
+    // console.log(this.ascendingName);
   }
 
-  ascendingSortByTime() {
-    let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
-          let x = a.date_time;
-          let y = b.date_time;
-        return x == y ? 0 : x > y ? 1 : -1;
-      }
-    );
-    this.pigBarn.pig_info_list = sortedResult;
-  }
+  // ascendingSortByName() {
+  //   let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
+  //         let x = a.farm_name_en.trim().toLowerCase();
+  //         let y = b.farm_name_en.trim().toLowerCase();
+  //       return x == y ? 0 : x > y ? 1 : -1;
+  //     }
+  //   );
+  //   this.pigBarn.pig_info_list = sortedResult;
+  //   // console.log(sortedResult);
+  // }
 
-  descendingSortByTime() {
-    let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
-          let x = a.date_time;
-          let y = b.date_time;
-        return x == y ? 0 : x < y ? 1 : -1;
-      }
-    );
-    this.pigBarn.pig_info_list = sortedResult;
-  }
+  // descendingSortByName() {
+  //   let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
+  //         let x = a.farm_name_en.trim().toLowerCase();
+  //         let y = b.farm_name_en.trim().toLowerCase();
+  //       return x == y ? 0 : x < y ? 1 : -1;
+  //     }
+  //   );
+  //   this.pigBarn.pig_info_list = sortedResult;
+  //   // console.log(sortedResult);
+  // }
+
+  // ascendingSortByTime() {
+  //   let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
+  //         let x = a.date_time;
+  //         let y = b.date_time;
+  //       return x == y ? 0 : x > y ? 1 : -1;
+  //     }
+  //   );
+  //   this.pigBarn.pig_info_list = sortedResult;
+  // }
+
+  // descendingSortByTime() {
+  //   let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
+  //         let x = a.date_time;
+  //         let y = b.date_time;
+  //       return x == y ? 0 : x < y ? 1 : -1;
+  //     }
+  //   );
+  //   this.pigBarn.pig_info_list = sortedResult;
+  // }
 
 
 }

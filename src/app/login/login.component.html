@@ -15,25 +15,21 @@
               <!-- <input id="UserName" (keyup.enter)="user.moveNextDOMId('PassWord')" [(ngModel)]="userName" required> -->
               <input id="UserName" [(ngModel)]="userName" required>
             </div>
-            <div style="margin-bottom:30px;">
+            <div class="input" style="margin-bottom:20px;">
               <div class="login-input-title">
-                <div class="input" style="margin-bottom:20px;">
-                  <div class="login-input-title">
-                    <!-- {{'Password'|translate}} -->
-                    Password
-                  </div>
-                  <input id="PassWord" [ngClass]="passwordSeen? 'not-show-password':'show-password'" [(ngModel)]="passWord"
-                    (keyup.enter)="login()" required>
-                  <img *ngIf="passwordSeen" class="password" src="../../assets/icon-password-visible.png"
-                    (click)="changePasswordFormat()">
-                  <img *ngIf="!passwordSeen" class="password" src="../../assets/icon-password-invisible.png"
-                    (click)="changePasswordFormat()">
-                </div>
-                <div class="message-title">
-                  <!-- {{message|translate}} -->
-                  {{ message }}
-                </div>
+                <!-- {{'Password'|translate}} -->
+                Password
               </div>
+              <input id="PassWord" [ngClass]="passwordSeen? 'not-show-password':'show-password'" [(ngModel)]="passWord"
+                (keyup.enter)="login()" required>
+              <img *ngIf="passwordSeen" class="password" src="../../assets/icon-password-visible.png"
+                (click)="changePasswordFormat()">
+              <img *ngIf="!passwordSeen" class="password" src="../../assets/icon-password-invisible.png"
+                (click)="changePasswordFormat()">
+            </div>
+            <div class="message-title">
+              <!-- {{message|translate}} -->
+              {{ message }}
             </div>
             <!-- <button pButton type="button" [label]="loginTitle" class="login-button" (click)="login()"></button> -->
             <button class="login-button" (click)="login()">Login</button>

@@ -27,15 +27,20 @@
             <td class="pig-barn-detail-table-left-col">
                 Name of farm
                 <span>
-                    <button class="sort-button" (click)="ascendingSortByName()">↑</button>
-                    <button class="sort-button" (click)="descendingSortByName()">↓</button>
+                    <!-- <button class="sort-button" (click)="ascendingSortByName()">↑</button>
+                    <button class="sort-button" (click)="descendingSortByName()">↓</button> -->
+                    <img *ngIf="ascendingName" src="../../assets/arrow-up-png.png" class="sort-button" (click)="sortByName()">
+                    <img *ngIf="!ascendingName" src="../../assets/arrow-down-png.png" class="sort-button" (click)="sortByName()">
+                    
                 </span>
             </td>
             <td class="pig-barn-detail-table-right-col">
                 Time
                 <span>
-                    <button class="sort-button" (click)="ascendingSortByTime()">↑</button>
-                    <button class="sort-button" (click)="descendingSortByTime()">↓</button>
+                    <!-- <button class="sort-button" (click)="ascendingSortByTime()">↑</button>
+                    <button class="sort-button" (click)="descendingSortByTime()">↓</button> -->
+                    <img *ngIf="ascendingTime" src="../../assets/arrow-up-png.png" class="sort-button" (click)="sortByTime()">
+                    <img *ngIf="!ascendingTime" src="../../assets/arrow-down-png.png" class="sort-button" (click)="sortByTime()">
                 </span>
             </td>
         </tr>

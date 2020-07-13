@@ -71,9 +71,9 @@ export class ApiService {
       new PigInfo(7, "Hexing Farm 2", "合興農場 2", new Date('2020-06-01T15:11:10')),
       new PigInfo(8, "Hexing Farm 3", "合興農場 3", new Date('2020-06-01T14:11:10')),
       new PigInfo(9, "Hexing Farm 4", "合興農場 4", new Date('2020-06-01T11:11:10')),
-      new PigInfo(10, "Hexing Farm 4", "合興農場 5", new Date('2020-06-01T11:11:10')),
-      new PigInfo(11, "Hexing Farm 4", "合興農場 6", new Date('2020-06-01T11:11:10')),
-      new PigInfo(12, "Hexing Farm 4", "合興農場 7", new Date('2020-06-01T11:11:10')),
+      new PigInfo(10, "Hexing Farm 5", "合興農場 5", new Date('2020-06-01T11:11:10')),
+      new PigInfo(11, "Hexing Farm 6", "合興農場 6", new Date('2020-06-01T11:11:10')),
+      new PigInfo(12, "Hexing Farm 7", "合興農場 7", new Date('2020-06-01T11:11:10')),
     ];
     
     this.pigBarnList = [

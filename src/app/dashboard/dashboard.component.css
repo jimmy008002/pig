@@ -46,7 +46,6 @@ mat-drawer {
     cursor: pointer;
     color: white;
     font-size: 20px;
-    font-weight: lighter;
     border: none;
 }
 
@@ -64,6 +63,5 @@ mat-drawer {
     cursor: pointer;
     color: white;
     font-size: 20px;
-    font-weight: lighter;
     border: none;
 }
