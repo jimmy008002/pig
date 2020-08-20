@@ -20,7 +20,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
 import { PigBarnComponent } from './pig-barn/pig-barn.component';
 import { FarmManagementComponent } from './farm-management/farm-management.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { PigBarnDetailComponent } from './pig-barn-detail/pig-barn-detail.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 // FontAwesome
@@ -48,7 +47,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     TopSideMenuComponent,
     PigBarnComponent,
     FarmManagementComponent,
-    BreadcrumbComponent,
     PigBarnDetailComponent,
     ArTagComponent,
     NoPermissionComponent,

@@ -15,8 +15,10 @@ import { ApiService } from '../api.service';
 })
 export class PigBarnDetailComponent implements OnInit {
 
+  // Pagination config
   config: any;
 
+  // Fontawesome
   leftIcon = faAngleLeft;
   rightIcon = faAngleRight;
 
@@ -24,8 +26,10 @@ export class PigBarnDetailComponent implements OnInit {
   ascendingTime: boolean;
   
   pigBarnList: PigBarn[];
+  pigBarnListDisplay: PigBarn[];
   pigBarn: PigBarn;
   pigInfoList: PigInfo[];
+  pigInfoListDisplay: PigInfo[];
   pigBarnName: String;
   pigNumber: number;
 
@@ -38,19 +42,35 @@ export class PigBarnDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pigBarnList = this.api.GetPigBarnList();
+      this.api.GetPigBarnList().subscribe((data:any) => {
+      this.pigBarnList= data.body;
+      this.pigBarnListDisplay = this.pigBarnList;
+     console.log(this.pigBarnListDisplay)
+    })
+ 
+
+    // this.route.params.subscribe(params => {
+    //   this.pigBarnList.forEach((p: PigBarn) => {
+    //     if (p.pig_barn_id == params["id"]) {
+    //       this.pigBarn = p;
+    //       this.pigBarnName = this.pigBarn.pig_barn_name;
+    //       // this.pigInfoList = this.pigBarn.pig_info_list;
+    //       this.pigInfoListDisplay = this.pigBarn.pig_info_list;
+    //       this.pigNumber = this.pigInfoList.length;
+    //     }
+    //   });
+    // });
 
     this.route.params.subscribe(params => {
-      this.pigBarnList.forEach((p: PigBarn) => {
-        if (p.pig_barn_id == params["id"]) {
+      this.pigBarnListDisplay.forEach((p: PigBarn) => {
+        if (p.pig_barn_id == params['id']) {
           this.pigBarn = p;
           this.pigBarnName = this.pigBarn.pig_barn_name;
-          this.pigInfoList = this.pigBarn.pig_info_list;
-          this.pigNumber = this.pigInfoList.length;
-
+          this.pigInfoListDisplay = this.pigBarn.pig_info_list;
+          this.pigNumber = this.pigInfoListDisplay.length;
         }
-      });
-    });
+      })
+    })
 
     this.ascendingName = true;
     this.ascendingTime = true;
@@ -85,8 +105,8 @@ export class PigBarnDetailComponent implements OnInit {
   sortByTime() {
     this.ascendingTime = !this.ascendingTime;
     let sortedResult = this.pigBarn.pig_info_list.sort((a, b) => {
-          let x = a.farm_name_en.trim().toLowerCase();
-          let y = b.farm_name_en.trim().toLowerCase();
+          let x = a.date_time;
+          let y = b.date_time;
           if (this.ascendingTime) {
             return x == y ? 0 : x > y ? 1 : -1;
           } else {

@@ -7,8 +7,8 @@
             <tbody>
                 <td style="padding-left: 20px;">
                     <ul>
-                        <li style="margin-bottom: 8px;"> {{ currentFarm.farm_name_cn }} </li>
-                        <li> {{ currentFarm.farm_name_en }} </li>
+                        <li style="margin-bottom: 8px;"> {{ currentFarm.farm_chinese_name }} </li>
+                        <li> {{ currentFarm.farm_english_name }} </li>
                     </ul>
                 </td>
                 <td style="text-align: right; padding-right: 20px;">
@@ -39,8 +39,8 @@
                 <tr class="ar-tag-table-row" *ngFor="let farm of farmListDisplay | paginate: config">
                     <td style="padding-left: 20px;">
                         <ul>
-                            <li style="margin-bottom: 8px;"> {{ farm.farm_name_cn }} </li>
-                            <li> {{ farm.farm_name_en }} </li>
+                            <li style="margin-bottom: 8px;"> {{ farm.farm_chinese_name }} </li>
+                            <li> {{ farm.farm_english_name }} </li>
                         </ul>
                     </td>
                     <td style="text-align: right; padding-right: 20px;">

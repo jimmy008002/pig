@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { FarmInfo } from '../model/FarmInfo';
+import {masterfile } from '../model/FarmInfo';
 
 
 @Component({
@@ -13,8 +13,8 @@ export class FarmManagementComponent implements OnInit {
 
   config: any;
 
-  farmList: FarmInfo[];
-  farmListDisplay: FarmInfo[];
+  farmList: masterfile[];
+  farmListDisplay: masterfile[];
 
   constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) {
     // pagination config
@@ -26,8 +26,15 @@ export class FarmManagementComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.farmList = this.api.GetFarmList();
-    this.farmListDisplay = this.farmList;
+    
+    this.api.GetFarmList().subscribe((data:any) =>{
+    this.farmList=data.body
+    this.farmListDisplay = this.farmList
+    console.log(this.farmListDisplay)
+  }
+  );  
+  
+    
   }
 
   farmSearchFilter(filterValue: string) {
@@ -40,8 +47,8 @@ export class FarmManagementComponent implements OnInit {
     } 
     else {
       filterResult = this.farmList.filter((item) => {
-        if (item.farm_name_en.toString().toLocaleLowerCase().includes(filterValue) 
-            || item.farm_name_cn.toString().toLocaleLowerCase().includes(filterValue)) {
+        if (item.farm_english_name.toString().toLocaleLowerCase().includes(filterValue) 
+            || item.farm_chinese_name.toString().toLocaleLowerCase().includes(filterValue)) {
           return item;
         }
       });
@@ -54,6 +61,10 @@ export class FarmManagementComponent implements OnInit {
 
   pageChange(event) {
     this.config.currentPage = event;
+  }
+
+  uploadCSV() {
+    
   }
 
 }

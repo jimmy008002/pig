@@ -1,11 +1,10 @@
-<!-- <app-breadcrumb></app-breadcrumb> -->
 <div>
     <fa-icon class="back-icon" [icon]="leftIcon"></fa-icon>
     <a routerLink="/Dashboard/PigBarn">Back</a>
 </div>
 
 <div class="pig-barn-breadcrumb">
-    <a routerLink="/Dashboard/PigBarn" style="color: black;"> Pig Barn </a> <fa-icon class="right-icon" [icon]="rightIcon"></fa-icon> 
+    <a routerLink="/Dashboard/PigBarn" style="color: black;"> Pig Barn </a><fa-icon class="right-icon" [icon]="rightIcon"></fa-icon> 
     {{ pigBarnName }}
 </div>
 
@@ -27,24 +26,26 @@
             <td class="pig-barn-detail-table-left-col">
                 Name of farm
                 <span>
+                    <!-- Seperate the ascending/descengding button -->
                     <!-- <button class="sort-button" (click)="ascendingSortByName()">↑</button>
                     <button class="sort-button" (click)="descendingSortByName()">↓</button> -->
-                    <img *ngIf="ascendingName" src="../../assets/arrow-up-png.png" class="sort-button" (click)="sortByName()">
-                    <img *ngIf="!ascendingName" src="../../assets/arrow-down-png.png" class="sort-button" (click)="sortByName()">
+                    <img *ngIf="ascendingName" src="../../assets/arrow-down-png.png" class="sort-button" (click)="sortByName()">
+                    <img *ngIf="!ascendingName" src="../../assets/arrow-up-png.png" class="sort-button" (click)="sortByName()">
                     
                 </span>
             </td>
             <td class="pig-barn-detail-table-right-col">
                 Time
                 <span>
+                    <!-- Seperate the ascending/descengding button -->
                     <!-- <button class="sort-button" (click)="ascendingSortByTime()">↑</button>
                     <button class="sort-button" (click)="descendingSortByTime()">↓</button> -->
-                    <img *ngIf="ascendingTime" src="../../assets/arrow-up-png.png" class="sort-button" (click)="sortByTime()">
-                    <img *ngIf="!ascendingTime" src="../../assets/arrow-down-png.png" class="sort-button" (click)="sortByTime()">
+                    <img *ngIf="ascendingTime" src="../../assets/arrow-down-png.png" class="sort-button" (click)="sortByTime()">
+                    <img *ngIf="!ascendingTime" src="../../assets/arrow-up-png.png" class="sort-button" (click)="sortByTime()">
                 </span>
             </td>
         </tr>
-        <tr class="pig-barn-detail-table-row" *ngFor="let pig of pigInfoList | paginate: config">
+        <tr class="pig-barn-detail-table-row" *ngFor="let pig of pigInfoListDisplay | paginate: config">
             <td class="pig-barn-detail-table-left-col">
                 <ul>
                     <li style="margin-bottom: 8px;"> {{ pig.farm_name_en }} </li>

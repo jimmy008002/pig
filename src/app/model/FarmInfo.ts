@@ -1,11 +1,13 @@
-export class FarmInfo {
-    farm_id: number;
-    farm_name_en: String;
-    farm_name_cn: String;
+export class masterfile {
 
-    constructor(farm_id: number, farm_name_en: String, farm_name_cn: String) {
-        this.farm_id = farm_id;
-        this.farm_name_en = farm_name_en;
-        this.farm_name_cn = farm_name_cn;
-    }
-}
+        farm_id: number;
+        farm_chinese_name:String;
+        farm_english_name:String;
+    
+        constructor(farm_id: number, farm_english_name: String,  farm_chinese_name: String) {
+            this.farm_id = farm_id;
+            this.farm_english_name =  farm_english_name;
+            this.farm_chinese_name =  farm_chinese_name;
+        }
+        
+    } 

@@ -17,7 +17,7 @@ export class AppTechGuard implements CanActivate {
     //   }
     // return this.user.getUserLoginStatus();
   
-    // test
+    // Return true for test
     return true;
   }
   

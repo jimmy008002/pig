@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FarmInfo } from '../model/FarmInfo';
+import { masterfile} from '../model/FarmInfo';
 import { DatePipe } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
@@ -12,11 +12,11 @@ import { ApiService } from '../api.service';
 export class ArTagComponent implements OnInit {
 
   config: any;
-  currentFarm: FarmInfo;
+  currentFarm: masterfile;
   currentDateTime;
   
-  farmList: FarmInfo[];
-  farmListDisplay: FarmInfo[];
+  farmList: masterfile[];
+  farmListDisplay: masterfile[];
 
   constructor(private api: ApiService, private route: ActivatedRoute, private router: Router, private datePipe: DatePipe) {
     this.config = {
@@ -32,8 +32,10 @@ export class ArTagComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.farmList = this.api.GetFarmList();
-    this.farmListDisplay = this.farmList;
+       
+    this.api.GetFarmList().subscribe((data1:any) =>
+    this.farmList=data1.body
+  );    this.farmListDisplay = this.farmList;
     this.currentFarm = this.farmListDisplay[0];
   }
 
@@ -51,8 +53,8 @@ export class ArTagComponent implements OnInit {
     } 
     else {
       filterResult = this.farmList.filter((item) => {
-        if (item.farm_name_en.toString().toLocaleLowerCase().includes(filterValue)
-            || item.farm_name_cn.toString().toLocaleLowerCase().includes(filterValue)) {
+        if (item.farm_english_name.toString().toLocaleLowerCase().includes(filterValue)
+            || item.farm_chinese_name.toString().toLocaleLowerCase().includes(filterValue)) {
           return item;
         }
       });
@@ -63,7 +65,7 @@ export class ArTagComponent implements OnInit {
     // console.log(this.farmListDisplay);
   }
 
-  activateFarmTag(farm: FarmInfo) {
+  activateFarmTag(farm: masterfile) {
     this.currentFarm = farm;
     this.currentDateTime = Date.now();
     // console.log(farm);

@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    // Default username & password: admin
     if (this.userName == 'admin' && this.passWord == 'admin') {
       this.user.setUserLoginStatus(true);
       this.router.navigate(['Dashboard/FarmManagement']);

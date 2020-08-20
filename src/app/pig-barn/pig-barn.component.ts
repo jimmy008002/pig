@@ -23,8 +23,12 @@ export class PigBarnComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pigBarnList = this.api.GetPigBarnList();
-    this.pigBarnListDisplay = this.pigBarnList;
+     this.api.GetPigBarnList().subscribe((data:any) => {
+      this.pigBarnList= data.body;
+      this.pigBarnListDisplay = this.pigBarnList;
+     console.log(this.pigBarnListDisplay)
+    })
+   
   }
 
   pageChange(event) {
