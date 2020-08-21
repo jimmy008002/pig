@@ -32,8 +32,8 @@ export class ApiService {
       }
     }
     // console.log(this.object);
-    // this.apiUrl = 'http://119.81.130.181:13090/com.emed_delmet_detection.web.api/service/json/GetAdminUser'
-    this.apiUrl = '';
+     this.apiUrl = 'http://119.81.130.181:13090/com.jimmy_pig_farm_test.web.api/service/json/GetAdminUser'
+
     return this.http.post(this.apiUrl, this.object).pipe(retry(3), timeout(1000),
       catchError(() => { return EMPTY; }),
       res => {
@@ -58,31 +58,38 @@ export class ApiService {
 
   GetPigBarnList() {
     // test data
-    this.pigInfoList = [
-      new PigInfo(1, "Hexing Farm", "合興農場", new Date('2020-06-21T09:12:00')),
-      new PigInfo(2, "Hexing Farm", "合興農場", new Date('2020-06-11T10:00:01')),
-      new PigInfo(3, "Hexing Farm", "合興農場", new Date('2020-06-11T10:00:01')),
-      new PigInfo(4, "Hexing Farm", "合興農場", new Date('2020-06-11T11:00:01')),
-      new PigInfo(5, "Hexing Farm", "合興農場", new Date('2020-06-11T10:00:01')),
-      new PigInfo(6, "Hexing Farm 1", "合興農場 1", new Date('2020-06-01T13:11:10')),
-      new PigInfo(71, "Hexing Farm 2", "合興農場 2", new Date('2020-06-01T15:11:10')),
-      new PigInfo(81, "Hexing Farm 3", "合興農場 3", new Date('2020-06-01T14:11:10')),
-      new PigInfo(9, "Hexing Farm 4", "合興農場 4", new Date('2020-06-01T11:11:10')),
-      new PigInfo(10, "Hexing Farm 5", "合興農場 5", new Date('2020-06-01T11:11:10')),
-      new PigInfo(11, "Hexing Farm 6", "合興農場 6", new Date('2020-06-01T11:11:10')),
-      new PigInfo(12, "Hexing Farm 7", "合興農場 7", new Date('2020-06-01T11:11:10')),
-    ];
-    
+   
     this.apiUrl = 'http://119.81.130.181:13090/com.jimmy_pig_farm_test.web.api/service/json/Getburn';
   let body={};
   return this.http.post(this.apiUrl,body).pipe(retry(3), timeout(1000),
   catchError(() => { return EMPTY; }),
   res => {
+  
     return res;
   }
 );
 
-    
+  
   }
 
+
+  // Getg () {
+  //   // test data
+  //   return this.pigInfoList = [
+  //     new PigInfo(1, "Hexing Farm", "合興農場", new Date('2020-06-21T09:12:00')),
+  //     new PigInfo(2, "Hexing Farm", "合興農場", new Date('2020-06-11T10:00:01')),
+  //     new PigInfo(3, "Hexing Farm", "合興農場", new Date('2020-06-11T10:00:01')),
+  //     new PigInfo(4, "Hexing Farm", "合興農場", new Date('2020-06-11T11:00:01')),
+  //     new PigInfo(5, "Hexing Farm", "合興農場", new Date('2020-06-11T10:00:01')),
+  //     new PigInfo(6, "Hexing Farm 1", "合興農場 1", new Date('2020-06-01T13:11:10')),
+  //     new PigInfo(71, "Hexing Farm 2", "合興農場 2", new Date('2020-06-01T15:11:10')),
+  //     new PigInfo(8, "Hexing Farm 3", "合興農場 3", new Date('2020-06-01T14:11:10')),
+  //     new PigInfo(9, "Hexing Farm 4", "合興農場 4", new Date('2020-06-01T11:11:10')),
+  //     new PigInfo(10, "Hexing Farm 5", "合興農場 5", new Date('2020-06-01T11:11:10')),
+  //     new PigInfo(11, "Hexing Farm 6", "合興農場 6", new Date('2020-06-01T11:11:10')),
+  //     new PigInfo(12, "Hexing Farm 7", "合興農場 7", new Date('2020-06-01T11:11:10')),
+  //   ];
+
+   
+  // }
 }

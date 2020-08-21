@@ -48,8 +48,8 @@
         <tr class="pig-barn-detail-table-row" *ngFor="let pig of pigInfoListDisplay | paginate: config">
             <td class="pig-barn-detail-table-left-col">
                 <ul>
-                    <li style="margin-bottom: 8px;"> {{ pig.farm_name_en }} </li>
-                    <li> {{ pig.farm_name_cn }} </li>
+                    <li style="margin-bottom: 8px;"> {{ pig.farm_chinese_name }} </li>
+                    <li> {{ pig.farm_english_name }} </li>
                 </ul>
             </td>
             <td class="pig-barn-detail-table-right-col">

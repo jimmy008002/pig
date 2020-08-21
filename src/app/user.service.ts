@@ -15,4 +15,7 @@ export class UserService {
   public setUserLoginStatus(login: boolean): void {
     this.userLoginStatus = login;
   }
+
+
+
 }
